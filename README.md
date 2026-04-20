@@ -32,7 +32,8 @@ This repository contains:
 Use the Maven Wrapper in `backend/` so you do not need a system Maven install:
 
 ```powershell
-& "C:\Users\brani\Desktop\SKOLA\PSI\projekt\psi_project\backend\mvnw.cmd" -f "C:\Users\brani\Desktop\SKOLA\PSI\projekt\psi_project\backend\pom.xml" test
+cd backend
+.\mvnw.cmd test
 ```
 
 For IntelliJ IDEA:
@@ -55,7 +56,7 @@ For IntelliJ IDEA:
 ## Regenerate model docs
 
 ```powershell
-python "C:\Users\brani\Desktop\SKOLA\PSI\projekt\psi_project\scripts\extract_ea_model.py"
+python .\scripts\extract_ea_model.py
 ```
 
 ## Notes
