@@ -24,6 +24,7 @@ This repository contains:
 - Human-readable model digest: `docs/ea-model/ea-model-digest.md`
 - AI-friendly structured model JSON: `docs/ea-model/ea-model.json`
 - Minimal architecture outline: `docs/project-outline.md`
+- Backend integration guide: `docs/backend-integration.md`
 - Team roadmap: `docs/roadmap.md`
 - Extraction script: `scripts/extract_ea_model.py`
 
