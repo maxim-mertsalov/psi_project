@@ -37,6 +37,13 @@ public class OrderService {
             .toList();
     }
 
+    public List<OrderSummaryResponse> listAllOrders(String authToken) {
+        authService.requireRole(authToken, AccountRole.ADMIN);
+        return orderRepository.findAll().stream()
+            .map(this::toSummary)
+            .toList();
+    }
+
     public OrderProcessResponse cancelMyOrder(String authToken, Long orderId) {
         String email = authService.requireAccount(authToken).getEmail();
         OrderEntity order = orderRepository.findByIdAndOwnerEmail(orderId, email)

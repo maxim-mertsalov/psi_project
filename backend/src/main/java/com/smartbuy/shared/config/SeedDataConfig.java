@@ -52,10 +52,12 @@ public class SeedDataConfig {
 
             Category phones = new Category();
             phones.setName("Telefony");
+            phones.setId(0L);
             categoryRepository.save(phones);
 
             Category laptops = new Category();
             laptops.setName("Notebooky");
+            laptops.setId(1L);
             categoryRepository.save(laptops);
 
             Product p1 = new Product();

@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* В v4 мы описываем тему прямо здесь. Это делает её доступной для @apply мгновенно */
+@theme {
+  --color-tertiary-fixed-dim: #ffb0c9;
+  --color-outline-variant: #c5c6ce;
+  --color-on-error-container: #93000a;
+  --color-tertiary-fixed: #ffd9e3;
+  --color-surface: #f8f9ff;
+  --color-inverse-on-surface: #ebf1fc;
+  --color-surface-bright: #f8f9ff;
+  --color-on-secondary-fixed: #001b3e;
+  --color-surface-dim: #d5dae5;
+  --color-error: #ba1a1a;
+  --color-on-primary-fixed-variant: #394761;
+  --color-on-tertiary-container: #ff66a3;
+  --color-on-secondary-fixed-variant: #2b4774;
+  --color-secondary-fixed-dim: #acc7fc;
+  --color-on-tertiary-fixed: #3e001e;
+  --color-surface-tint: #515f7a;
+  --color-on-surface: #161c24;
+  --color-background: #f8f9ff;
+  --color-primary-container: #26344d;
+  --color-on-primary-container: #8e9dba;
+  --color-secondary: #435f8d;
+  --color-primary-fixed: #d7e3ff;
+  --color-tertiary-container: #6b0038;
+  --color-surface-container-high: #e3e8f3;
+  --color-error-container: #ffdad6;
+  --color-secondary-container: #afcaff;
+  --color-inverse-primary: #b8c7e6;
+  --color-surface-container: #e8eef9;
+  --color-surface-container-low: #eef4ff;
+  --color-on-surface-variant: #44474d;
+  --color-on-tertiary-fixed-variant: #8e004c;
+  --color-inverse-surface: #2b3139;
+  --color-on-primary-fixed: #0c1b33;
+  --color-secondary-fixed: #d6e3ff;
+  --color-on-secondary-container: #395483;
+  --color-primary: #101f37;
+  --color-tertiary: #440022;
+  --color-surface-variant: #dde3ed;
+  --color-outline: #75777e;
+  --color-surface-container-lowest: #ffffff;
+  --color-primary-fixed-dim: #b8c7e6;
+  --color-surface-container-highest: #dde3ed;
+
+  --radius-default: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Подключаем Geist как основной шрифт темы */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
+  --font-mono: var(--font-geist-mono), ui-mono-serif, monospace;
+}
+
+/* Слой компонентов */
+@layer components {
+  .glass-header {
+    /* Чтобы @apply работал в v4 с прозрачностью, лучше использовать нативные переменные или убедиться, что @import "tailwindcss" выше */
+    @apply bg-white/80 backdrop-blur-md;
+    /* Если ошибка сохранится, замените @apply на чистый CSS:
+       background-color: rgb(255 255 255 / 80%);
+       backdrop-filter: blur(12px); 
+    */
+  }
+
+  .premium-shadow {
+    box-shadow: 0 20px 40px rgba(22, 28, 36, 0.06);
+  }
+
+  .cta-gradient {
+    background: linear-gradient(135deg, #101f37 0%, #26344d 100%);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+  }
+}
